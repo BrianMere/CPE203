@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="fdf1c173-821c-4662-838b-74af967a928b" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../../../.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../CPE203.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../__MACOSX/._given" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../__MACOSX/given/._.DS_Store" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../__MACOSX/given/._.idea" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../__MACOSX/given/._part1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../__MACOSX/given/._part2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../__MACOSX/given/.idea/._.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../__MACOSX/given/.idea/._misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../__MACOSX/given/.idea/._modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../__MACOSX/given/.idea/._ok.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../__MACOSX/given/.idea/._workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../__MACOSX/given/part1/._.DS_Store" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../__MACOSX/given/part1/._.idea" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../__MACOSX/given/part1/._part1.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../__MACOSX/given/part1/._src" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../__MACOSX/given/part1/._test" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../__MACOSX/given/part1/.idea/._.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../__MACOSX/given/part1/.idea/._misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../__MACOSX/given/part1/.idea/._modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../__MACOSX/given/part1/.idea/._workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../__MACOSX/given/part1/src/._BetterLoop.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../__MACOSX/given/part1/src/._Course.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../__MACOSX/given/part1/src/._CourseGrade.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../__MACOSX/given/part1/src/._ExampleMap.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../__MACOSX/given/part1/src/._SimpleArray.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../__MACOSX/given/part1/src/._SimpleIf.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../__MACOSX/given/part1/src/._SimpleList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../__MACOSX/given/part1/src/._SimpleLoop.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../__MACOSX/given/part1/test/._TestCases.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../__MACOSX/given/part2/._.DS_Store" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../__MACOSX/given/part2/._part2.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../__MACOSX/given/part2/._src" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../__MACOSX/given/part2/._test" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../__MACOSX/given/part2/test/._TestCases.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/ok.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../part1/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../part1/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../part1/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../part1/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../part1/out/production/part1/BetterLoop.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../part1/out/production/part1/Course.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../part1/out/production/part1/CourseGrade.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../part1/out/production/part1/ExampleMap.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../part1/out/production/part1/SimpleArray.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../part1/out/production/part1/SimpleIf.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../part1/out/production/part1/SimpleList.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../part1/out/production/part1/SimpleLoop.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../part1/out/test/part1/TestCases.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../part1/part1.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../part1/src/BetterLoop.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../part1/src/Course.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../part1/src/CourseGrade.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../part1/src/ExampleMap.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../part1/src/SimpleArray.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../part1/src/SimpleIf.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../part1/src/SimpleList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../part1/src/SimpleLoop.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../part1/test/TestCases.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/part2.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Applicant.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Course.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/CourseGrade.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/TestCases.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="27AVBFQ8CdoAV5wxONo2kmu5iS0" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../part1" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+  </component>
+  <component name="RunManager">
+    <configuration name="TestCases.testGetName" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="part2" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TestCases" />
+      <option name="METHOD_NAME" value="testGetName" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.TestCases.testGetName" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="fdf1c173-821c-4662-838b-74af967a928b" name="Changes" comment="" />
+      <created>1648762739494</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1648762739494</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+</project>
