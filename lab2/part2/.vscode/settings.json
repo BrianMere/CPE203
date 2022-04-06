@@ -1,5 +1,11 @@
 {
     "java.project.sourcePaths": [
         "src"
-    ]
+    ],
+    "java.project.referencedLibraries": {
+        "include": [
+            "lib/**/*.jar",
+            "D:\brian\\Documents\\SchoolPapers\\CS 61B Projects\\Intro\\lib\\junit-platform-console-standalone-1.6.0.jar"
+        ]
+    }
 }
