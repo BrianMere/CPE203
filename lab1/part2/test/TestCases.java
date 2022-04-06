@@ -31,9 +31,9 @@ public class TestCases
          new CourseGrade("Operating Systems", 75),
          new CourseGrade("Non-CS", 83)
       );
-      Applicant testApplicant = new Applicant("Aakash", grades, 50, 60000, 4);
+      Applicant testApplicant = new Applicant("Aakash", grades, 50, 60000, 4); 
       assertEquals("Aakash", testApplicant.getName());
-      assertEquals(grades, testApplicant.getGrades()); //TODO: check that this is okay to have other public methods like this...
+      assertEquals(grades, testApplicant.getGrades());
       assertEquals(50, testApplicant.getHours());
       assertEquals(60000, testApplicant.getSalary());
       assertEquals(4, testApplicant.getYear());

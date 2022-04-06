@@ -27,6 +27,12 @@ public class Applicant{
         this.year = year;
     }
 
+    // Added overloaded contructor
+    public Applicant(String name, List<CourseGrade> grades){
+        this.name = name;
+        this.grades = grades;
+    }
+
     public String getName(){
         return this.name;
     }
