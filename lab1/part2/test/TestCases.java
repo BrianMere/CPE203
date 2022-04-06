@@ -31,7 +31,7 @@ public class TestCases
          new CourseGrade("Operating Systems", 75),
          new CourseGrade("Non-CS", 83)
       );
-      Applicant testApplicant = new Applicant("Aakash", grades, 50, 60000, 4); 
+      Applicant testApplicant = new Applicant("Aakash", grades, 50, 60000, 4);
       assertEquals("Aakash", testApplicant.getName());
       assertEquals(grades, testApplicant.getGrades());
       assertEquals(50, testApplicant.getHours());
