@@ -1,6 +1,5 @@
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
-import java.util.function.Predicate;
 import java.util.stream.Collectors;
 import java.util.Arrays;
 import java.util.List;
@@ -10,10 +9,9 @@ import java.util.LinkedList;
 import java.awt.Color;
 import java.awt.Point;
 
-import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.fail;
 import org.junit.Test;
 
 public class TestCases
@@ -67,6 +65,189 @@ public class TestCases
    }
 
    @Test
+   public void testColors() {
+      Circle c = new Circle(2.4, new Point(1,4), Color.ORANGE);
+      Rectangle r = new Rectangle(1.3, 5.9, new Point(0, 2), Color.WHITE);
+      Triangle t = new Triangle(new Point(3,3), new Point(4, 6), new Point(7,10), Color.BLACK);
+
+      assertEquals(Color.ORANGE, c.getColor());
+      c.setColor(Color.BLUE);
+      assertEquals(Color.BLUE, c.getColor());
+
+      assertEquals(Color.WHITE, r.getColor());
+      r.setColor(Color.RED);
+      assertEquals(Color.RED, r.getColor());
+
+      assertEquals(Color.BLACK, t.getColor());
+      t.setColor(Color.ORANGE);
+      assertEquals(Color.ORANGE, t.getColor());
+   }
+
+   @Test
+   public void testTranslation() {
+      Circle c = new Circle(2.4, new Point(1,4), Color.ORANGE);
+      Rectangle r = new Rectangle(1.3, 5.9, new Point(0, 2), Color.WHITE);
+      Triangle t = new Triangle(new Point(3,3), new Point(4, 6), new Point(7,10), Color.BLACK);
+
+      c.translate(new Point(1,2));
+      assertEquals(new Point(2, 6), c.getCenter());
+
+      r.translate(new Point(3,4));
+      assertEquals(new Point(3,6), r.getTopLeft());
+
+      t.translate(new Point(5,6));
+      assertEquals(new Point(8, 9), t.getVertexA());
+      assertEquals(new Point(9, 12), t.getVertexB());
+      assertEquals(new Point(12, 16), t.getVertexC());
+   }
+
+   @Test
+   public void testGettersSetters() {
+      Circle c = new Circle(1.2, new Point(0,1), Color.yellow);
+      Rectangle r = new Rectangle(7.2, 6.9, new Point(-1, 2), Color.RED);
+      Triangle t = new Triangle(new Point(4,7), new Point(4, 6), new Point(2,1), Color.CYAN);
+
+      // Circle Getters/Setters
+      assertEquals(1.2, c.getRadius(), DELTA);
+      c.setRadius(3.4);
+      assertEquals(3.4, c.getRadius(), DELTA);
+      assertEquals(new Point(0,1), c.getCenter());
+
+      // Rectangle Getters/Setters
+      assertEquals(7.2, r.getWidth(), DELTA);
+      r.setWidth(2.1);
+      assertEquals(2.1, r.getWidth(), DELTA);
+      assertEquals(6.9, r.getHeight(), DELTA);
+      r.setHeight(4.5);
+      assertEquals(4.5, r.getHeight(), DELTA);
+      assertEquals(new Point(-1,2), r.getTopLeft());
+
+      // Triangle Getters
+      assertEquals(new Point(4,7), t.getVertexA());
+      assertEquals(new Point(4,6), t.getVertexB());
+      assertEquals(new Point(2,1), t.getVertexC());
+   }
+
+   @Test
+   public void testEquals() {
+      Circle c1 = new Circle(1.2, new Point(0,1), Color.yellow);
+      Rectangle r1 = new Rectangle(7.2, 6.9, new Point(-1, 2), Color.RED);
+      Triangle t1 = new Triangle(new Point(4,7), new Point(4, 6), new Point(2,1), Color.CYAN);
+
+      // Completely different
+      Circle c2 = new Circle(2.4, new Point(1,4), Color.ORANGE);
+      Rectangle r2 = new Rectangle(1.3, 5.9, new Point(0, 2), Color.WHITE);
+      Triangle t2 = new Triangle(new Point(3,3), new Point(4, 6), new Point(7,10), Color.BLACK);
+
+      // Slightly different
+      Circle c3 = new Circle(1.2, new Point(0,1), Color.GREEN);
+      Rectangle r3 = new Rectangle(7.2, 6.8, new Point(-1, 2), Color.RED);
+      Triangle t3 = new Triangle(new Point(5,7), new Point(4, 6), new Point(2,1), Color.CYAN);
+
+      // Exactly the same
+      Circle c4 = new Circle(1.2, new Point(0,1), Color.yellow);
+      Rectangle r4 = new Rectangle(7.2, 6.9, new Point(-1, 2), Color.RED);
+      Triangle t4 = new Triangle(new Point(4,7), new Point(4, 6), new Point(2,1), Color.CYAN);
+      
+      // Circles
+      assertTrue(c1.equals(c4));
+      assertTrue(c1.equals(c1));
+      assertFalse(c1.equals(c2));
+      assertFalse(c1.equals(c3));
+
+      // Rectangles
+      assertTrue(r1.equals(r4));
+      assertTrue(r1.equals(r1));
+      assertFalse(r1.equals(r2));
+      assertFalse(r1.equals(r3));
+
+      // Triangles
+      assertTrue(t1.equals(t4));
+      assertTrue(t1.equals(t1));
+      assertFalse(t1.equals(t2));
+      assertFalse(t1.equals(t3));
+   }
+
+   @Test
+   public void testGetWorkSpaceShapes() {
+      Circle c1 = new Circle(1.2, new Point(0,1), Color.yellow);
+      Rectangle r1 = new Rectangle(7.2, 6.9, new Point(-1, 2), Color.RED);
+      Triangle t1 = new Triangle(new Point(4,7), new Point(4, 6), new Point(2,1), Color.CYAN);
+
+      Circle c2 = new Circle(2.4, new Point(1,4), Color.ORANGE);
+      Rectangle r2 = new Rectangle(1.3, 5.9, new Point(0, 2), Color.WHITE);
+      Triangle t2 = new Triangle(new Point(3,3), new Point(4, 6), new Point(7,10), Color.BLACK);
+
+      Circle c3 = new Circle(1.2, new Point(0,1), Color.GREEN);
+      Rectangle r3 = new Rectangle(7.2, 6.8, new Point(-1, 2), Color.RED);
+      Triangle t3 = new Triangle(new Point(5,7), new Point(4, 6), new Point(2,1), Color.CYAN);
+
+      Circle c4 = new Circle(1.2, new Point(0,1), Color.yellow);
+      Rectangle r4 = new Rectangle(7.2, 6.9, new Point(-1, 2), Color.RED);
+      Triangle t4 = new Triangle(new Point(4,7), new Point(4, 6), new Point(2,1), Color.CYAN);
+
+      WorkSpace ws = new WorkSpace();
+      ws.add(c1);
+      ws.add(c2);
+      ws.add(r1);
+      ws.add(r2);
+      ws.add(t1);
+      ws.add(c3);
+      ws.add(r3);
+      ws.add(t2);
+      ws.add(t3);
+      ws.add(c4);
+      ws.add(r4);
+      ws.add(t4);
+
+      // Get Circles
+      List<Circle> list1 = new ArrayList<Circle>();
+      list1.add(c1);
+      list1.add(c2);
+      list1.add(c3);
+      list1.add(c4);
+      assertEquals(list1, ws.getCircles());
+
+      // Get Rectangles
+      List<Rectangle> list2 = new ArrayList<Rectangle>();
+      list2.add(r1);
+      list2.add(r2);
+      list2.add(r3);
+      list2.add(r4);
+      assertEquals(list2, ws.getRectangles());
+
+      // Get Triangles
+      List<Triangle> list3 = new ArrayList<Triangle>();
+      list3.add(t1);
+      list3.add(t2);
+      list3.add(t3);
+      list3.add(t4);
+      assertEquals(list3, ws.getTriangles());
+      
+      // Get Shapes by Color
+      List<Shape> list4 = new ArrayList<Shape>();
+      list4.add(r1);
+      list4.add(r3);
+      list4.add(r4);
+      assertEquals(list4, ws.getShapesByColor(Color.RED));
+   }
+
+   @Test
+   public void testGettersAndSizeWorkSpace() {
+      Circle c3 = new Circle(1.2, new Point(0,1), Color.GREEN);
+      Circle c4 = new Circle(1.2, new Point(0,1), Color.yellow);
+
+      WorkSpace ws = new WorkSpace();
+      
+      ws.add(c3);
+      ws.add(c4);
+
+      assertEquals(c3, ws.get(0));
+      assertEquals(c4, ws.get(1));
+      assertEquals(2, ws.size());
+   }
+
+   @Test
    public void testWorkSpaceAreaOfAllShapes()
    {
       WorkSpace ws = new WorkSpace();
@@ -77,6 +258,25 @@ public class TestCases
                  Color.BLACK));
 
       assertEquals(114.2906063, ws.getAreaOfAllShapes(), DELTA);
+   }
+
+   @Test
+   public void testWorkSpacePerimeterAllShapes() {
+      WorkSpace ws = new WorkSpace();
+
+      Circle c1 = new Circle(1.2, new Point(0,1), Color.yellow);
+
+      Circle c2 = new Circle(2.4, new Point(1,4), Color.ORANGE);
+      Rectangle r2 = new Rectangle(1.3, 5.9, new Point(0, 2), Color.WHITE);
+
+      Triangle t3 = new Triangle(new Point(5,7), new Point(4, 6), new Point(2,1), Color.CYAN);
+
+      ws.add(c1);
+      ws.add(c2);
+      ws.add(t3);
+      ws.add(r2);
+
+      assertEquals(50.5270491, ws.getPerimeterOfAllShapes(), DELTA);
    }
 
    @Test

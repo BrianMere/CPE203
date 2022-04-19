@@ -78,9 +78,9 @@ public class Triangle implements Shape{
     @Override
     public boolean equals(Object o){
         return o instanceof Triangle &&
-        ((Triangle) o).getVertexA() == getVertexA() && 
-        ((Triangle) o).getVertexB() == getVertexB() && 
-        ((Triangle) o).getVertexC() == getVertexC() && 
-        ((Triangle) o).getColor() == getColor();
+        ((Triangle) o).getVertexA().equals(getVertexA()) && 
+        ((Triangle) o).getVertexB().equals(getVertexB()) && 
+        ((Triangle) o).getVertexC().equals(getVertexC()) && 
+        ((Triangle) o).getColor().equals(getColor());
     }
 }

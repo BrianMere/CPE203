@@ -55,7 +55,7 @@ public class WorkSpace {
         List<Shape> output = new ArrayList<Shape>();
         for(Shape shape : shapes){
             if(shape.getColor() == color){
-                output.add((Triangle) shape);
+                output.add(shape);
             }
         }
         return output;

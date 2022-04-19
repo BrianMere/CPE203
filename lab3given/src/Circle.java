@@ -31,7 +31,7 @@ public class Circle implements Shape{
 
     @Override
     public void translate(Point p) {
-        center.setLocation(p.getX(), p.getY());
+        center.setLocation(center.getX() + p.getX(), center.getY() + p.getY());
     }
 
     // New Methods
@@ -56,7 +56,9 @@ public class Circle implements Shape{
 
     @Override
     public boolean equals(Object o){
-        return o instanceof Circle && ((Circle) o).getRadius() == radius && ((Circle) o).getCenter() == center && ((Circle) o).getColor() == color;
+        if (o == this)
+            return true;
+        return o instanceof Circle && ((Circle) o).getRadius() == radius && ((Circle) o).getCenter().equals(center) && ((Circle) o).getColor().equals(color);
     }
     
 }

@@ -30,7 +30,7 @@ public class Rectangle implements Shape{
 
     @Override
     public void translate(Point p) {
-        topLeft.setLocation(p.getX(), p.getY());
+        topLeft.setLocation(topLeft.getX() + p.getX(), topLeft.getY() + p.getY());
     }
 
     // Begin new methods
@@ -67,8 +67,8 @@ public class Rectangle implements Shape{
         return o instanceof Rectangle && 
         ((Rectangle) o).getWidth() == width && 
         ((Rectangle) o).getHeight() ==  height && 
-        ((Rectangle) o).getTopLeft() == topLeft && 
-        ((Rectangle) o).getColor() == color;
+        ((Rectangle) o).getTopLeft().equals(topLeft) && 
+        ((Rectangle) o).getColor().equals(color);
     }
     
 }
