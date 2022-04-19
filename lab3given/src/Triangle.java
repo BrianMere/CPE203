@@ -40,6 +40,9 @@ public class Triangle implements Shape{
             Point point2 = points.get(i+1);
             sum += Math.sqrt(Math.pow(point1.getX() - point2.getX(), 2) + Math.pow(point1.getY() - point2.getY(), 2));
         }
+        Point point1 = points.get(points.size() - 1);
+        Point point2 = points.get(0);
+        sum += Math.sqrt(Math.pow(point1.getX() - point2.getX(), 2) + Math.pow(point1.getY() - point2.getY(), 2));
         return sum;
     }
 

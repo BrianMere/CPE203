@@ -30,7 +30,19 @@ public class TestCases
       assertEquals(101.2839543, c.getArea(), DELTA);
    }
 
-   //TODO: add tests for all other methods
+   @Test
+   public void testRectangleGetArea() {
+      Rectangle r = new Rectangle(1.23, 4.56, new Point(1, 2), Color.BLUE);
+
+      assertEquals(5.6088, r.getArea(), DELTA);
+   }
+
+   @Test
+   public void testTriangleGetArea() {
+      Triangle t = new Triangle(new Point(0, 0), new Point(2, 0), new Point(1,1), Color.ORANGE);
+
+      assertEquals(1.0, t.getArea(), DELTA);
+   }
 
    @Test
    public void testCircleGetPerimeter()
@@ -38,6 +50,20 @@ public class TestCases
       Circle c = new Circle(5.678, new Point(2, 3), Color.BLACK);
 
       assertEquals(35.6759261, c.getPerimeter(), DELTA);
+   }
+
+   @Test
+   public void testRectangleGetPerimeter() {
+      Rectangle r = new Rectangle(Math.PI, Math.E, new Point(-1, -2), Color.GREEN);
+
+      assertEquals(11.7197489641, r.getPerimeter(), DELTA);
+   }
+
+   @Test
+   public void testTriangleGetPerimeter() {
+      Triangle t = new Triangle(new Point(1, 3), new Point(2, 3), new Point(2,2), Color.LIGHT_GRAY);
+
+      assertEquals(3.4142135624, t.getPerimeter(), DELTA);
    }
 
    @Test
