@@ -40,6 +40,10 @@ public class TestCases
       Triangle t = new Triangle(new Point(0, 0), new Point(2, 0), new Point(1,1), Color.ORANGE);
 
       assertEquals(1.0, t.getArea(), DELTA);
+
+      t = new Triangle(new Point(1, 1), new Point(-1, 10), new Point(-2,1), Color.ORANGE);
+
+      assertEquals(13.5, t.getArea(), DELTA);
    }
 
    @Test
