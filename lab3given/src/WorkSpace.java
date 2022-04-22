@@ -62,7 +62,7 @@ public class WorkSpace {
     }
 
     public double getAreaOfAllShapes(){
-        double sum = 0;
+        double sum = 0.0;
         for(Shape shape : shapes){
             sum += shape.getArea();
         }
