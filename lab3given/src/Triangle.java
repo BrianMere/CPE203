@@ -29,7 +29,7 @@ public class Triangle implements Shape{
         Point point1 = points.get(points.size() - 1);
         Point point2 = points.get(0);
         sum += (point1.getX() * point2.getY()) - (point2.getX() * point1.getY());
-        return sum / 2.0;
+        return Math.abs(sum / 2.0);
     }
 
     @Override
