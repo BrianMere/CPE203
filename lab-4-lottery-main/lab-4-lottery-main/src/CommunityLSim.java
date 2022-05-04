@@ -107,34 +107,30 @@ public final class CommunityLSim {
 
             // 3. Simulate the lottery for those players.
             Game game = new Game(); // By default a new winning lottery ticket is made on construction;
-            int scholarshipPool = 0; // Also make a scholarship pool while doing the game
             for(CommunityMember member : players){
 
                 member.playRandom(); // Generate a random lottery ticket
                 float winnings = game.calcWinnings(member.getTicket()); // Calculate the winnings from the ticket
                 member.addMoney(winnings); // Add money to the member's account
 
+                // 3.5. Scholarship part
+                float PROB_P_GET = 0.3f;
+                float PROB_R_GET = 1f - PROB_P_GET; // Ignore. Not used.
                 if(winnings == -1f){ // Communal 'scholarship' part (only do if winnings == -1f)
-                    scholarshipPool++;
+                    Random rand = new Random();
+                    boolean isPoorRecipient = (rand.nextFloat(0f, 1f) < PROB_P_GET);
+                    int numP = communityMembers.size();
+                    int index;
+                    if(isPoorRecipient){
+                        index = randomUniqIndx(1, 0, numP/2).get(0);
+                    }
+                    else{
+                        index = randomUniqIndx(1, numP/2, numP).get(0);
+                    }
+                    CommunityMember scholarshipWinner = communityMembers.get(index);
+                    scholarshipWinner.addMoney(1f);
                 }
             }
-
-            // 3.5. Scholarship part
-            float PROB_P_GET = 0.3f;
-            float PROB_R_GET = 1f - PROB_P_GET; // Ignore. Not used.
-
-            Random rand = new Random();
-            boolean isPoorRecipient = (rand.nextFloat(0f, 1f) < PROB_P_GET);
-            int numP = communityMembers.size();
-            int index;
-            if(isPoorRecipient){
-                index = randomUniqIndx(1, 0, numP/2).get(0);
-            }
-            else{
-                index = randomUniqIndx(1, numP/2, numP).get(0);
-            }
-            CommunityMember scholarshipWinner = communityMembers.get(index);
-            scholarshipWinner.addMoney((float)scholarshipPool);
 
             // 4. Update everyone's money for that year.
             for (CommunityMember cm : this.communityMembers) {

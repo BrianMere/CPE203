@@ -37,7 +37,7 @@ public final class DrawLottery
   }
 
   public void settings() {
-      size(displayWidth/2, displayHeight/2);
+      size(displayWidth/4, displayHeight/4);
   }
 
   public void setup() {
