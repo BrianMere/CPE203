@@ -38,22 +38,34 @@ public class TestCases
    }
 
    @Test
-   public void test01_AddExpressionEvaluate()
+   public void test01_ExpressionsEvaluate()
    {
       IdentifierExpression x = new IdentifierExpression("x");
       IdentifierExpression y = new IdentifierExpression("y");
       AddExpression add = new AddExpression(x, y);
+      SubtractExpression sub = new SubtractExpression(x, y);
+      MultiplyExpression mult = new MultiplyExpression(x, y);
+      DivideExpression div = new DivideExpression(x, y);
 
       assertEquals(12.5, add.evaluate(bindings), DELTA);
+      assertEquals(-7.5, sub.evaluate(bindings), DELTA);
+      assertEquals(25.0, mult.evaluate(bindings), DELTA);
+      assertEquals(0.25, div.evaluate(bindings), DELTA);
    }
 
    @Test
-   public void test02_AddExpressionToString()
+   public void test02_ExpressionsToString()
    {
       IdentifierExpression x = new IdentifierExpression("x");
       IdentifierExpression y = new IdentifierExpression("y");
       AddExpression add = new AddExpression(x, y);
+      SubtractExpression sub = new SubtractExpression(x, y);
+      MultiplyExpression mult = new MultiplyExpression(x, y);
+      DivideExpression div = new DivideExpression(x, y);
 
       assertEquals("(x + y)", add.toString());
+      assertEquals("(x - y)", sub.toString());
+      assertEquals("(x * y)", mult.toString());
+      assertEquals("(x / y)", div.toString());
    }
 }

@@ -26,22 +26,22 @@ class CourseSection
          return false;
       }
       CourseSection p = (CourseSection) o;
-      return p.prefix.equals(this.prefix) &&
-      p.number.equals(this.number) &&
+      return (p.prefix != null && p.prefix.equals(this.prefix)) &&
+      p.number != null && p.number.equals(this.number) &&
       p.enrollment == this.enrollment &&
-      p.startTime.equals(this.startTime) &&
-      p.endTime.equals(this.endTime);
+      p.startTime != null && p.startTime.equals(this.startTime) &&
+      p.endTime != null && p.endTime.equals(this.endTime);
    }
 
    @Override
    public int hashCode(){
-      int hash = 0;
+      int hash = 1;
       final int PRIME = 31;
-      hash = hash * PRIME + this.prefix.hashCode();
-      hash = hash * PRIME + this.number.hashCode();
-      hash = hash * PRIME + ((Integer)this.enrollment).hashCode();
-      hash = hash * PRIME + this.startTime.hashCode();
-      hash = hash * PRIME + this.endTime.hashCode();
+      hash = hash * PRIME + (this.prefix != null ? this.prefix.hashCode() : 0);
+      hash = hash * PRIME + (this.number != null ? this.number.hashCode() : 0);
+      hash = hash * PRIME + this.enrollment;
+      hash = hash * PRIME + (this.startTime != null ? this.startTime.hashCode() : 0);
+      hash = hash * PRIME + (this.endTime != null ? this.endTime.hashCode() : 0);
       return hash;
    }
 

@@ -1,6 +1,6 @@
 package calculator;
 
-public class BinaryExpression implements Expression {
+public abstract class BinaryExpression implements Expression {
 
     private final Expression lft;
     private final Expression rht;
@@ -14,19 +14,13 @@ public class BinaryExpression implements Expression {
 
     public String toString()
    {
-      return "(" + lft + operation + rht + ")";
+      return "(" + lft + " " + operation+ " " + rht + ")";
    }
 
     public double evaluate(Bindings bindings) {
-        switch (this.operation) {
-            case "+":
-                return lft.evaluate(bindings) + rht.evaluate(bindings);
-        
-            case "-":
-                return lft.evaluate(bindings) - rht.evaluate(bindings);
-            default:
-                return -1; //TODO: remove this
-        }
+        return _applyOperator(lft.evaluate(bindings), rht.evaluate(bindings));
     }
+
+    protected abstract double _applyOperator(double left, double right);
     
 }

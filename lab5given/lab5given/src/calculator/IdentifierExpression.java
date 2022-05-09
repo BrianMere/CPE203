@@ -1,7 +1,6 @@
 package calculator;
 
-class IdentifierExpression
-   implements Expression
+class IdentifierExpression implements Expression
 {
    private final String id;
 

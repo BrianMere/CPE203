@@ -1,7 +1,6 @@
 package calculator;
 
-class NegationExpression
-   implements Expression
+class NegationExpression implements Expression
 {
    private final Expression opnd;
 

@@ -58,4 +58,19 @@ public class TestCases
 
       assertNotEquals(one.hashCode(), two.hashCode());
    }
+
+   @Test
+   public void testExerciseNULL()
+   {
+      final CourseSection one = new CourseSection("CSC", "203", 35,
+              LocalTime.of(9, 10), LocalTime.of(10, 0));
+      final CourseSection two = null;
+      final CourseSection three = new CourseSection(null, "203", 35,
+              LocalTime.of(9, 10), LocalTime.of(10, 0));
+
+      assertFalse(one.equals(two));
+      assertFalse(one.equals(three));
+      //assertEquals(0, two.hashCode()); //TODO: ask if this is an expected test
+      assertNotEquals(one.hashCode(), three.hashCode());
+   }
 }
