@@ -1,5 +1,3 @@
-package calculator;
-
 class InvalidOperationException
    extends Exception
 {

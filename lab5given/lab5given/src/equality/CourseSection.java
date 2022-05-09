@@ -1,5 +1,3 @@
-package equality;
-
 import java.time.LocalTime;
 
 class CourseSection

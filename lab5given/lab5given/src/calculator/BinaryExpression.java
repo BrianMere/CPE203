@@ -1,4 +1,3 @@
-package calculator;
 
 public abstract class BinaryExpression implements Expression {
 

@@ -1,5 +1,3 @@
-package calculator;
-
 class UnboundIdentifierException
    extends RuntimeException
 {

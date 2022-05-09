@@ -1,5 +1,3 @@
-package calculator;
-
 class Token
 {
    private final String lexeme;

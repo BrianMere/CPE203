@@ -1,5 +1,3 @@
-package calculator;
-
 class DoubleConstantExpression implements Expression
 {
    private final double val;

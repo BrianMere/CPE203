@@ -1,5 +1,3 @@
-package calculator;
-
 class AddExpression
    extends BinaryExpression
 {

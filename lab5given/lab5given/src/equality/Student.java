@@ -1,5 +1,3 @@
-package equality;
-
 import java.util.List;
 
 class Student
@@ -24,20 +22,20 @@ class Student
          return false;
       }
       Student p = (Student) o;
-      return p.surname.equals(this.surname) &&
-      p.givenName.equals(this.givenName) &&
+      return p.surname != null && p.surname.equals(this.surname) &&
+      p.givenName != null && p.givenName.equals(this.givenName) &&
       p.age == this.age &&
-      p.currentCourses.equals(this.currentCourses);
+      p.currentCourses != null && p.currentCourses.equals(this.currentCourses);
    }
 
    @Override
    public int hashCode(){
-      int hash = 0;
+      int hash = 1;
       final int PRIME = 31;
-      hash = hash * PRIME + this.surname.hashCode();
-      hash = hash * PRIME + this.givenName.hashCode();
+      hash = hash * PRIME + (this.surname != null ? this.surname.hashCode() : 0);
+      hash = hash * PRIME + (this.givenName != null ? this.givenName.hashCode() : 0);
       hash = hash * PRIME + ((Integer)this.age).hashCode();
-      hash = hash * PRIME + this.currentCourses.hashCode();
+      hash = hash * PRIME + (this.currentCourses != null ? this.currentCourses.hashCode() : 0);
       return hash;
    }
 }

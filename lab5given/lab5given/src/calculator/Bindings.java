@@ -1,4 +1,3 @@
-package calculator;
 
 interface Bindings
 {

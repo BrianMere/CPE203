@@ -1,5 +1,3 @@
-package calculator;
-
 class Parser
 {
    private final Scanner scanner;

@@ -1,5 +1,3 @@
-package calculator;
-
 import java.io.IOException;
 import java.io.Reader;
 
