@@ -107,19 +107,24 @@ public class TestCases
       final CourseSection two = null;
       final CourseSection three = new CourseSection(null, "203", 35,
               LocalTime.of(9, 10), LocalTime.of(10, 0));
+      final CourseSection four = new CourseSection(null, "203", 35,
+              LocalTime.of(9, 10), LocalTime.of(10, 0));
 
       ArrayList classes1 = new ArrayList<CourseSection>();
       classes1.add(one);
 
       final Student s1 = new Student("Johnny", "John", 20, classes1);
       final Student s2 = new Student("Johnny", "John", 20, null);
+      final Student s3 = new Student("Johnny", "John", 20, null);
 
       assertFalse(one.equals(two));
       assertFalse(one.equals(three));
+      assertTrue(three.equals(four));
       assertNotEquals(one.hashCode(), three.hashCode());
 
       assertFalse(s1.equals(s2));
       assertFalse(s2.equals(s1));
+      assertTrue(s3.equals(s2));
       assertNotEquals(s1.hashCode(), s2.hashCode());
    }
 }

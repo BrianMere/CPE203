@@ -22,10 +22,10 @@ class Student
          return false;
       }
       Student p = (Student) o;
-      return p.surname != null && p.surname.equals(this.surname) &&
-      p.givenName != null && p.givenName.equals(this.givenName) &&
-      p.age == this.age &&
-      p.currentCourses != null && p.currentCourses.equals(this.currentCourses);
+      return (p.surname != null ? p.surname.equals(this.surname) : this.surname == null)&&
+              (p.givenName != null ? p.givenName.equals(this.givenName) : this.givenName == null) &&
+               p.age == this.age &&
+              (p.currentCourses != null ? p.currentCourses.equals(this.currentCourses) : this.currentCourses == null);
    }
 
    @Override

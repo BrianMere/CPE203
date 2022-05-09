@@ -24,11 +24,11 @@ class CourseSection
          return false;
       }
       CourseSection p = (CourseSection) o;
-      return (p.prefix != null && p.prefix.equals(this.prefix)) &&
-      p.number != null && p.number.equals(this.number) &&
-      p.enrollment == this.enrollment &&
-      p.startTime != null && p.startTime.equals(this.startTime) &&
-      p.endTime != null && p.endTime.equals(this.endTime);
+      return (p.prefix != null ? p.prefix.equals(this.prefix) : this.prefix == null) &&
+              (p.number != null ? p.number.equals(this.number) : this.number == null) &&
+               p.enrollment == this.enrollment &&
+              (p.startTime != null ? p.startTime.equals(this.startTime) : this.startTime == null)&&
+              (p.endTime != null ? p.endTime.equals(this.endTime) : this.endTime == null);
    }
 
    @Override
