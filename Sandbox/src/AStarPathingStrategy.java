@@ -39,7 +39,7 @@ class AStarPathingStrategy
             for(Point neighbor : potentialNeighbors.apply(currentNode.getPoint()).filter(canPassThrough).toList()){
                 if(!closedList.containsKey(neighbor)){
                     PathNode potNewNode = new PathNode(neighbor, currentNode);
-                    if(openList.contains(potNewNode)) {
+                    if(g_vals.containsKey(potNewNode)) {
                         if (g_vals.get(potNewNode) > g_vals.get(currentNode) + 1.0) {
                             g_vals.put(potNewNode, g_vals.get(currentNode) + 1.0);
                         }
