@@ -39,16 +39,21 @@ class AStarPathingStrategy
             for(Point neighbor : potentialNeighbors.apply(currentNode.getPoint()).filter(canPassThrough).toList()){
                 if(!closedList.containsKey(neighbor)){
                     PathNode potNewNode = new PathNode(neighbor, currentNode);
+                    boolean flag = false;
                     if(g_vals.containsKey(potNewNode)) {
+                        flag = true;
                         if (g_vals.get(potNewNode) > g_vals.get(currentNode) + 1.0) {
                             g_vals.put(potNewNode, g_vals.get(currentNode) + 1.0);
                         }
                     }
                     else{
                         g_vals.put(potNewNode, g_vals.get(currentNode) + 1.0);
+
                     }
                     h_vals.put(potNewNode, getDistance(potNewNode.getPoint(), end));
-                    openList.add(potNewNode);
+                    if(!flag){ // ONLY add node to open list if it DIDN'T get replaced from the above if statement
+                        openList.add(potNewNode);
+                    }
                 }
             }
             closedList.put(currentNode.getPoint(), true);
