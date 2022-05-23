@@ -18,8 +18,9 @@ class AStarPathingStrategy
         List<Point> path = new LinkedList<Point>();
 
         Map<PathNode, Double> g_vals = new HashMap<>(); // And extension of openList to store G_vals
+        Map<PathNode, Double> h_vals = new HashMap<>(); // Making this to hopefully reduce computations needed
         // How to compare PathNodes
-        Comparator<PathNode> comp = (p1,p2)->Double.compare((g_vals.get(p1) + getDistance(p1.getPoint(), end)), ((g_vals.get(p2) + getDistance(p2.getPoint(), end))));
+        Comparator<PathNode> comp = (p1,p2)->Double.compare((g_vals.get(p1) + h_vals.get(p1)), ((g_vals.get(p2) + h_vals.get(p2))));
         // F = G + H = g_val + H (heuristic, estimated distance)
 
         PriorityQueue<PathNode> openList = new PriorityQueue<>(comp);
@@ -32,8 +33,9 @@ class AStarPathingStrategy
         PathNode currentNode = firstPathNode;
         openList.add(currentNode); // 1/2. Add start node to open list and mark as current node (G = 0, H = dist, F = dist)
         g_vals.put(currentNode, 0.0);
+        h_vals.put(currentNode, getDistance(currentNode.getPoint(), end));
 
-        while(!currentNode.equals(lastPathNode)){ // Continue to generate 'pointers' until you've hit the end point
+        while(currentNode != null && !currentNode.equals(lastPathNode)){ // Continue to generate 'pointers' until you've hit the end point
             for(Point neighbor : potentialNeighbors.apply(currentNode.getPoint()).filter(canPassThrough).toList()){
                 if(!closedList.containsKey(neighbor)){
                     PathNode potNewNode = new PathNode(neighbor, currentNode);
@@ -45,6 +47,7 @@ class AStarPathingStrategy
                     else{
                         g_vals.put(potNewNode, g_vals.get(currentNode) + 1.0);
                     }
+                    h_vals.put(potNewNode, getDistance(potNewNode.getPoint(), end));
                     openList.add(potNewNode);
                 }
             }
@@ -56,7 +59,7 @@ class AStarPathingStrategy
         // but our path will have the target's previous point reference another point and so on back to the beginning
 
         // Also, at this point because of the above while loop then currentNode.equals(lastPathNode), which is our target
-        while(!currentNode.equals(firstPathNode)){
+        while(currentNode != null && !currentNode.equals(firstPathNode)){
             path.add(0, currentNode.getPoint());
             currentNode = currentNode.getPriorNode();
         }
