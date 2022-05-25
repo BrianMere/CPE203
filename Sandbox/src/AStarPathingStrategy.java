@@ -35,8 +35,10 @@ class AStarPathingStrategy
         g_vals.put(currentNode, 0.0);
         h_vals.put(currentNode, getDistance(currentNode.getPoint(), end));
 
-        while(currentNode != null && !currentNode.equals(lastPathNode)){ // Continue to generate 'pointers' until you've hit the end point
-            for(Point neighbor : potentialNeighbors.apply(currentNode.getPoint()).filter(canPassThrough).toList()){
+        //currentNode != null && !currentNode.equals(lastPathNode)
+        //currentNode != null && !withinReach.test(currentNode.getPoint(), end)
+        while(currentNode != null && !withinReach.test(currentNode.getPoint(), end)){ // Continue to generate 'pointers' until you've hit the end point
+            for(Point neighbor : potentialNeighbors.apply(currentNode.getPoint()).filter(canPassThrough).collect(Collectors.toList())){
                 if(!closedList.containsKey(neighbor)){
                     PathNode potNewNode = new PathNode(neighbor, currentNode);
                     boolean flag = false;
@@ -48,7 +50,6 @@ class AStarPathingStrategy
                     }
                     else{
                         g_vals.put(potNewNode, g_vals.get(currentNode) + 1.0);
-
                     }
                     h_vals.put(potNewNode, getDistance(potNewNode.getPoint(), end));
                     if(!flag){ // ONLY add node to open list if it DIDN'T get replaced from the above if statement
