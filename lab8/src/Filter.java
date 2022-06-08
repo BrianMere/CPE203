@@ -20,7 +20,7 @@ public class Filter {
         // Do point stuff here
         Function<Point, Point> func1 = (Point p)->{return new Point(p.x * 0.5, p.y * 0.5, p.z);};
         Function<Point, Point> func2 = (Point p)->{return new Point(p.x - 150, p.y - 37, p.z);};
-        pointList = pointList.stream().filter(p->p.z<2.0).map(func1).map(func2).toList();
+        pointList = pointList.stream().filter(p->p.z<=2.0).map(func1).map(func2).toList();
 
         // List of points -> File
         FileWriter outFileWriter = new FileWriter("assets/drawMe.txt");
